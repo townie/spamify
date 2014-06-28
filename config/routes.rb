@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  resources :visited_urls
+
   resources :urls
+
+  root :to =>  "urls#index"
+
+  mount Resque::Server, :at => "/resque"
+
+  get '/spam/:id', to: "urls#spam", as: "spam"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

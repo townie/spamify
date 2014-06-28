@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @visited_url.url %>
+</p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @visited_url.page %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @visited_url.duration %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @visited_url.content %>
+</p>
+
+<%= link_to 'Edit', edit_visited_url_path(@visited_url) %> |
+<%= link_to 'Back', visited_urls_path %>

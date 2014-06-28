@@ -1,5 +1,10 @@
 class UrlsController < ApplicationController
-  before_action :set_url, only: [:show, :edit, :update, :destroy]
+  before_action :set_url, only: [:show, :edit, :update, :destroy, :spam]
+
+  def spam
+    Resque.enqueue(UrlFetch, @url.id)
+    redirect_to @url
+  end
 
   # GET /urls
   # GET /urls.json

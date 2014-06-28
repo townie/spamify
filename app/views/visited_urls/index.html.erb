@@ -1,0 +1,32 @@
+<h1>Listing visited_urls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Page</th>
+      <th>Duration</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @visited_urls.each do |visited_url| %>
+      <tr>
+        <td><%= visited_url.url %></td>
+        <td><%= visited_url.page %></td>
+        <td><%= visited_url.duration %></td>
+        <td><%= visited_url.content %></td>
+        <td><%= link_to 'Show', visited_url %></td>
+        <td><%= link_to 'Edit', edit_visited_url_path(visited_url) %></td>
+        <td><%= link_to 'Destroy', visited_url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <%= paginate @visited_urls %>
+</table>
+
+<br>
+
+<%= link_to 'New Visited url', new_visited_url_path %>

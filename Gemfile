@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'kaminari'
 
-gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
+gem "resque", :require => "resque/server"
+gem "redis-objects"
 
-
-
+gem "mechanize"
+gem 'pry'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
